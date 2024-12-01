@@ -1,6 +1,6 @@
 import React, { createContext, useState, ReactNode } from 'react';
 
-// Interface que define o formato do contexto
+// Interface que define o formato do contexto.
 interface UserContextProps {
     id: number;
     nome: string;
@@ -12,7 +12,7 @@ interface UserContextProps {
     setSenha: (senha: string) => void;
 }
 
-// Criação do contexto com valores iniciais
+// Criação do contexto com valores iniciais.   
 export const UserContext = createContext<UserContextProps>({
 
     id: -1,
@@ -25,12 +25,12 @@ export const UserContext = createContext<UserContextProps>({
     setSenha: () => {}
 });
 
-// Provedor que envolve toda a aplicação
+// Provedor que envolve toda a aplicação.
 interface UserProviderProps {
     children: ReactNode;
 }
 
-// Componente que envolve a aplicação e fornece o contexto para os filhos
+// Componente que envolve a aplicação e fornece o contexto para os filhos.
 function UserProvider({ children }: UserProviderProps) {
 
     const [id, setId] = useState<number>(0);

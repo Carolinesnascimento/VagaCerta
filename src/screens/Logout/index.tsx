@@ -16,10 +16,10 @@ import { Button } from '../../components/Button';
 import styled from 'styled-components/native';
 import { UserContext } from '../../context/UserContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import api from '../../services/api';
 
 
-export default function Logout({ route, navigation }) {
+
+export default function Logout({ navigation }) {
 
   const { id, nome, email, senha, setId, setNome, setEmail, setSenha } = useContext(UserContext);
 
@@ -85,9 +85,9 @@ const ButtonRow = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 16px; /* Espaçamento entre o título e os botões */
+  margin-top: 16px; /* Espaçamento entre o título e os botões... */
 `;
 
 const ButtonSpacing = styled.View`
-  width: 16px; /* Espaçamento entre os botões */
+  width: 16px; /* Espaçamento entre os botões... */
 `;

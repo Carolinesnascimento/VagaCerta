@@ -3,8 +3,6 @@
 import { ThemeProvider } from 'styled-components';
 import { StatusBar } from 'expo-status-bar';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-//import { MaterialIcons } from '@expo/vector-icons';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -17,7 +15,7 @@ import List  from './src/screens/List';
 import Profile  from './src/screens/Profile';
 import Details  from './src/screens/Details';
 
-import UserProvider, { UserContext } from "./src/context/UserContext";
+import UserProvider from "./src/context/UserContext";
 import Logout from './src/screens/Logout';
 
 
@@ -69,7 +67,6 @@ function Auth(){
     </Tab.Navigator>
   )
 }
-
 
 export default function App() {
   return (
