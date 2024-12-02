@@ -1,203 +1,72 @@
-# VagaCerta API  
+# Aplicativo VagaCerta
 
-Este projeto é uma API RESTful criada com *Node.js, **Express* e *Sequelize, que implementa operações CRUD (Create, Read, Update, Delete) para as entidades **Usuários* e *Vagas. O banco de dados utilizado é o **SQLite*.  
+Este projeto é um aplicativo móvel desenvolvido com **React Native** e **Expo**, permitindo o gerenciamento de vagas e usuários.
+
+---
+
+## Como Baixar o Código do Aplicativo VagaCerta
+
+1. Instale o Git no seu computador.  
+2. Execute o seguinte comando no terminal:  
+
+```bash
+git clone https://github.com/Carolinesnascimento/VagaCerta.git
+```  
+
+---
+
+## Como Executar o Aplicativo VagaCerta  
+
+1. Acesse o diretório do projeto:  
+
+```bash
+cd VagaCerta
+```  
+
+2. Instale as dependências do projeto:  
+
+```bash
+npm install
+```  
+
+3. Inicie o aplicativo utilizando o Expo:  
+
+```bash
+npx expo start
+```  
+
+### Observações:  
+
+- No arquivo **`api.ts`**, é necessário configurar o IP do servidor onde a API está alocada.  
+- Certifique-se de que o aplicativo **Expo Go** esteja na versão **51** para executar o aplicativo corretamente.  
 
 ---
 
 ## Tecnologias Utilizadas  
 
-- *Node.js*  
-- *Express*  
-- *Sequelize*  
-- *SQLite*  
-- *Body-parser*  
-- *UUID* (para geração de IDs únicos)  
+- **React Native**: Framework para desenvolvimento de aplicativos móveis.  
+- **Expo**: Plataforma para desenvolvimento de aplicativos React Native.  
+- **Styled Components**: Biblioteca para estilização de componentes em React.  
+- **Axios**: Biblioteca para fazer requisições HTTP.  
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.  
 
 ---
 
 ## Estrutura do Projeto  
 
-- *server.js*: Arquivo principal da aplicação que inicia o servidor.  
-- *config/database.js*: Configuração do Sequelize e do banco de dados SQLite.  
-- *routes/usuarios.js*: Rotas para o CRUD de Usuários.  
-- *routes/vagas.js*: Rotas para o CRUD de Vagas.  
-
----
-
-## Como Baixar o Código da API do Aplicativo VagaCerta  
-
-1. Instale o Git no seu computador.  
-2. Execute o seguinte comando no terminal:  
-
-bash
-git clone https://github.com/Carolinesnascimento/VAGAS-API.git
-  
-
----
-
-## Como Executar a API do Aplicativo VagaCerta  
-
-1. Acesse o diretório do projeto:  
-
-bash
-cd VAGAS-API
-  
-
-2. Instale as dependências do projeto:  
-
-bash
-npm install
-  
-
-3. Inicie a aplicação:  
-
-bash
-npm start
-  
-
-### Observações:  
-
-- A API foi configurada para rodar na porta *3000* do computador.  
-- O repositório no GitHub já inclui o arquivo *database.sqlite* povoado com dados de exemplo.  
-
----
-
-## Endpoints  
-
-### Usuários  
-
-Endpoint para listar todos os usuários:  
-
-bash
-GET http://localhost:3000/api/usuarios
-  
-
-#### Exemplo de resposta:  
-
-json
-[
-  {
-    "id": 1,
-    "nome": "João Silva",
-    "email": "joao.silva@example.com",
-    "senha": "senha123",
-    "createdAt": "2024-11-30T16:09:24.617Z",
-    "updatedAt": "2024-12-01T01:29:47.242Z"
-  },
-  {
-    "id": 2,
-    "nome": "Carol Souza",
-    "email": "carol@gmail.com",
-    "senha": "senha123",
-    "createdAt": "2024-11-30T16:13:38.799Z",
-    "updatedAt": "2024-12-01T13:43:33.212Z"
-  },
-  {
-    "id": 3,
-    "nome": "Maria Oliveira",
-    "email": "maria.oliveira@example.com",
-    "senha": "senha456",
-    "createdAt": "2024-11-30T16:23:28.896Z",
-    "updatedAt": "2024-11-30T16:23:28.896Z"
-  },
-  {
-    "id": 5,
-    "nome": "Carlos Pereira",
-    "email": "carlos.pereira@example.com",
-    "senha": "senha789",
-    "createdAt": "2024-11-30T17:55:12.322Z",
-    "updatedAt": "2024-11-30T17:55:12.322Z"
-  }
-]
-  
-
-### Vagas  
-
-Endpoint para listar todas as vagas:  
-
-bash
-GET http://localhost:3000/api/vagas
-  
-
-#### Exemplo de resposta:  
-
-json
-[
-  {
-    "id": 2,
-    "titulo": "Desenvolvedor Back-end",
-    "descricao": "Desenvolvimento de APIs RESTful utilizando Node.js.",
-    "dataCadastro": "2024-06-28T00:00:00.000Z",
-    "telefone": "8765-4321",
-    "status": "aberta",
-    "empresa": "Innovative Tech",
-    "createdAt": "2024-11-30T16:21:06.379Z",
-    "updatedAt": "2024-11-30T16:21:06.379Z"
-  },
-  {
-    "id": 3,
-    "titulo": "Analista de Sistemas",
-    "descricao": "Análise e levantamento de requisitos de sistemas.",
-    "dataCadastro": "2024-06-25T00:00:00.000Z",
-    "telefone": "9988-7766",
-    "status": "encerrada",
-    "empresa": "System Analysts Inc.",
-    "createdAt": "2024-11-30T16:21:20.254Z",
-    "updatedAt": "2024-11-30T16:21:20.254Z"
-  },
-  {
-    "id": 4,
-    "titulo": "Engenheiro de Software",
-    "descricao": "Desenvolvimento de software em diversas linguagens.",
-    "dataCadastro": "2024-06-20T00:00:00.000Z",
-    "telefone": "5544-3322",
-    "status": "aberta",
-    "empresa": "Global Software Solutions",
-    "createdAt": "2024-11-30T16:21:27.097Z",
-    "updatedAt": "2024-11-30T16:21:27.097Z"
-  },
-  {
-    "id": 5,
-    "titulo": "Suporte Técnico",
-    "descricao": "Atendimento e suporte a clientes.",
-    "dataCadastro": "2024-06-15T00:00:00.000Z",
-    "telefone": "4433-2211",
-    "status": "encerrada",
-    "empresa": "Customer Support Ltd.",
-    "createdAt": "2024-11-30T16:21:33.313Z",
-    "updatedAt": "2024-11-30T16:21:33.313Z"
-  },
-  {
-    "id": 6,
-    "titulo": "Gerente de Projetos",
-    "descricao": "Gestão e coordenação de projetos de TI.",
-    "dataCadastro": "2024-06-10T00:00:00.000Z",
-    "telefone": "1122-3344",
-    "status": "aberta",
-    "empresa": "Project Managers Corp.",
-    "createdAt": "2024-11-30T16:21:52.029Z",
-    "updatedAt": "2024-11-30T16:21:52.029Z"
-  },
-  {
-    "id": 7,
-    "titulo": "Designer UX/UI",
-    "descricao": "Criação de interfaces e experiências de usuário.",
-    "dataCadastro": "2024-06-05T00:00:00.000Z",
-    "telefone": "6677-8899",
-    "status": "encerrada",
-    "empresa": "Creative Designs",
-    "createdAt": "2024-11-30T16:21:58.895Z",
-    "updatedAt": "2024-11-30T16:21:58.895Z"
-  },
-  {
-    "id": 8,
-    "titulo": "Analista de Dados",
-    "descricao": "Análise e interpretação de dados empresariais.",
-    "dataCadastro": "2024-06-01T00:00:00.000Z",
-    "telefone": "5566-7788",
-    "status": "aberta",
-    "empresa": "Data Analysts LLC",
-    "createdAt": "2024-11-30T16:22:06.517Z",
-    "updatedAt": "2024-11-30T16:22:06.517Z"
-  }
-]
+- **App.tsx**: Arquivo principal da aplicação que configura o provedor de contexto, tema, navegação e status bar.  
+- **src/theme/index.ts**: Configuração do tema da aplicação, incluindo cores e tamanhos de fonte.  
+- **src/context/UserContext.tsx**: Provedor de contexto para gerenciar o estado do usuário autenticado.  
+- **src/services/api.ts**: Configuração do Axios para fazer requisições HTTP à API.  
+- **src/screens/Login/index.tsx**: Tela de login do usuário.  
+- **src/screens/Form/index.tsx**: Tela de formulário para cadastro de usuário.  
+- **src/screens/List/index.tsx**: Tela que lista as vagas disponíveis.  
+- **src/screens/Profile/index.tsx**: Tela de perfil do usuário.  
+- **src/screens/Details/index.tsx**: Tela de detalhes de uma vaga específica.  
+- **src/screens/Logout/index.tsx**: Tela de logout do usuário.  
+- **src/components/Button/index.tsx**: Componente de botão reutilizável.  
+- **src/components/Input/index.tsx**: Componente de campo de entrada reutilizável.  
+- **src/components/Logo/index.tsx**: Componente de logo da aplicação.  
+- **src/components/VagaCard/index.tsx**: Componente de card para exibir informações de uma vaga.  
+- **src/@types/png.d.ts**: Declaração de tipos para arquivos PNG.  
+- **src/@types/styles.d.ts**: Declaração de tipos para o tema do styled-components.
